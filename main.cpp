@@ -11,10 +11,13 @@ const regex COMMENT_REGEX_C_CPP_H_JAVA_JS("([\t ]*\\/\\*((?!\\*\\/)[^])*\\*\\/[\
 const regex COMMENT_REGEX_PHP("([\t ]*\\/\\*((?!\\*\\/)[^])*\\*\\/[\t ]*|\\n?(\\/\\/|#).*)");
 const regex COMMENT_REGEX_CSS("[\t ]*\\/\\*((?!\\*\\/)[^])*\\*\\/[\t ]*");
 const regex COMMENT_REGEX_PYTHON("|\\n?#.*");
+const regex COMMENT_REGEX_CMAKE("|\\n?#.*");
+const regex COMMENT_REGEX_FORTRAN("|\\n?!.*");
 
 
 const map<string, regex> TYPE_TO_REGEX = {
 	{"c",COMMENT_REGEX_C_CPP_H_JAVA_JS},
+	{"cc",COMMENT_REGEX_C_CPP_H_JAVA_JS},
 	{"h",COMMENT_REGEX_C_CPP_H_JAVA_JS},
 	{"cpp",COMMENT_REGEX_C_CPP_H_JAVA_JS},
 	{"java",COMMENT_REGEX_C_CPP_H_JAVA_JS},
@@ -23,6 +26,12 @@ const map<string, regex> TYPE_TO_REGEX = {
 	{"html",COMMENT_REGEX_HTML},
 	{"php",COMMENT_REGEX_PHP},
 	{"py",COMMENT_REGEX_PYTHON},
+	{"f90",COMMENT_REGEX_FORTRAN},
+	{"F90",COMMENT_REGEX_FORTRAN},
+	{"F",COMMENT_REGEX_FORTRAN},
+	{"f",COMMENT_REGEX_FORTRAN},
+	{"txt",COMMENT_REGEX_CMAKE},
+	{"cmake",COMMENT_REGEX_CMAKE},
 };
 
 
